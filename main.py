@@ -31,7 +31,7 @@ def autowakeup():
             GPIO.cleanup()
             return
 
-
+autowakeup()
 '''
 async def main():
     while True:
