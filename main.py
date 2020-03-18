@@ -19,12 +19,11 @@ def autowakeup():
     while True:
         try:
             date_time = datetime.now()
-            date_time.strftime("%H%M")
             if date_time == "0900":
                 GPIO.output(powersw, GPIO.LOW)
                 time.sleep(0.5)
                 GPIO.output(powersw, GPIO.HIGH)
-            print(f"{'0900'} and {date_time} / {date_time == '0900'}")
+            print(f"{'0900'} and {date_time.strftime('%H%M')} / {date_time == '0900'}")
         except KeyboardInterrupt:
             GPIO.output(powersw, GPIO.HIGH)
             GPIO.output(resetsw, GPIO.HIGH)
