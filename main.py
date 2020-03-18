@@ -3,6 +3,7 @@ import time
 powersw = 14
 resetsw = 15
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(powersw, GPIO.OUT)
 GPIO.setup(resetsw, GPIO.OUT)
@@ -16,7 +17,7 @@ if sw.isdigit() and int(sw) is (14 or 15):
         time.sleep(1)
         GPIO.output(powersw, GPIO.HIGH)
     if int(sw) is 15:
-        print("Shorted : 14")
+        print("Shorted : 15")
         GPIO.output(resetsw, GPIO.LOW)
         time.sleep(1)
         GPIO.output(resetsw, GPIO.HIGH)
