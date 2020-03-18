@@ -9,8 +9,9 @@ GPIO.setup(powersw, GPIO.OUT)
 GPIO.setup(resetsw, GPIO.OUT)
 GPIO.output(powersw, GPIO.HIGH)
 GPIO.output(resetsw, GPIO.HIGH)
-sw = input()
+
 while True:
+    sw = input()
     if sw.isdigit() and int(sw) is (14 or 15):
         if int(sw) is 14:
             print("Shorted : 14")
